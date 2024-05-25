@@ -11,6 +11,18 @@
 </head>
 <body>
     <h1>Cartões de Visita</h1>
+    <form id="filterForm">
+        <label for="filterClassification">Filtrar por Classificação:</label>
+        <select id="filterClassification">
+            <option value="">Todas</option>
+            <option value="Artes">Artes</option>
+            <option value="Bioconstrução">Bioconstrução</option>
+            <option value="Educação">Educação</option>
+            <option value="Permacultura">Permacultura</option>
+        </select>
+        <button type="button" onclick="displayCards()">Filtrar</button>
+    </form>
+
     <div id="cards"></div>
 
     <h2>Adicionar Novo Cartão de Visita</h2>
@@ -37,9 +49,15 @@
         ];
 
         function displayCards() {
+            const filterClassification = document.getElementById('filterClassification').value;
             const cardsDiv = document.getElementById('cards');
             cardsDiv.innerHTML = '';
-            cards.forEach(card => {
+
+            const filteredCards = filterClassification ? 
+                cards.filter(card => card.classification === filterClassification) : 
+                cards;
+
+            filteredCards.forEach(card => {
                 cardsDiv.innerHTML += `<div class="card">
                     <p>Nome: ${card.name}</p>
                     <p>Título: ${card.title}</p>
