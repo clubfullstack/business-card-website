@@ -25,6 +25,8 @@
 
     <div id="cards"></div>
 
+    <button id="exportar-btn">Exportar Dados</button>
+
     <h2>Adicionar Novo Cartão de Visita</h2>
     <form id="addCardForm">
         Nome: <input type="text" id="name"><br>
@@ -41,8 +43,6 @@
         </select><br>
         <button type="button" onclick="addCard()">Adicionar</button>
     </form>
-
-    <button id="exportar-btn">Exportar Dados</button>
 
     <script>
         document.getElementById('exportar-btn').addEventListener('click', function() {
