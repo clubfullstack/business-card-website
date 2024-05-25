@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    loadCards();
     displayCards();
 });
 
@@ -31,6 +30,7 @@ function displayCards() {
             <p>Título: ${card.title}</p>
             <p>Página Online: <a href="${card.pagina_online}" target="_blank">${card.pagina_online}</a></p>
             <p>Instagram: <a href="https://instagram.com/${card.instagram}" target="_blank">${card.instagram}</a></p>
+            <p>Telefone: ${card.phone}</p>
             <p>Classificação: ${card.classification}</p>
         </div>`;
     });
